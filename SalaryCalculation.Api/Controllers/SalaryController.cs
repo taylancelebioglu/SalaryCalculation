@@ -16,6 +16,7 @@ namespace SalaryCalculation.Api.Controllers
         /// Api Test
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public SalaryDateCalculationDTO Test()
         {
             SalaryDateCalculationDTO testDto = new SalaryDateCalculationDTO()
@@ -30,7 +31,9 @@ namespace SalaryCalculation.Api.Controllers
         /// Gets next salary date
         /// </summary>
         /// <returns></returns>
-        public DateTime GetNextSalary(SalaryDateCalculationDTO calculationData, DateTime currentDate)
+        [HttpPost]
+        [Route("api/GetNextSalary")]
+        public DateTime GetNextSalary([FromBody]SalaryDateCalculationDTO calculationData, DateTime currentDate)
         {
             PaymentDateCalculator calculator = new PaymentDateCalculator();
             IPaymentDateCalculator relatedCalculator = calculator.GetCalculator(calculationData.PaymentFrequency);

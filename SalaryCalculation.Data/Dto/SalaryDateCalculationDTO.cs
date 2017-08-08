@@ -1,4 +1,6 @@
-﻿namespace SalaryCalculation.Data
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SalaryCalculation.Data
 {
     /// <summary>
     /// SalaryDateCalculation
@@ -16,6 +18,7 @@
         /// <summary>
         /// Specifies the frequency of the salary
         /// </summary>
+        [Required]
         public SalaryFrequency PaymentFrequency { get; set; }
     }
     public enum SalaryFrequency
