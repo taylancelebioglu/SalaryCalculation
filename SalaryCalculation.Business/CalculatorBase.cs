@@ -10,12 +10,12 @@ namespace SalaryCalculation.Business
 {
     public class CalculatorBase
     {
-        public DateTime GetNextWorkingDay(DateTime expectedDate)
+        public DateTime GetNextWorkingDay(DateTime expectedDate, bool next)
         {
             CultureInfo culture = Thread.CurrentThread.CurrentUICulture;
             Holidays holidays = new Business.Holidays();
 
-            var dayOfTheWeek = culture.DateTimeFormat.Calendar.GetDayOfMonth(expectedDate);
+            var dayOfTheWeek = culture.DateTimeFormat.Calendar.GetDayOfWeek(expectedDate);
 
             while (true)
             {
@@ -25,7 +25,9 @@ namespace SalaryCalculation.Business
                 }
                 else
                 {
-                    return GetNextWorkingDay(expectedDate.AddDays(1));
+                    int additionalDay = (next) ? 1 : -1;
+
+                    return GetNextWorkingDay(expectedDate.AddDays(additionalDay), next);
                 }
             }
             return expectedDate;
