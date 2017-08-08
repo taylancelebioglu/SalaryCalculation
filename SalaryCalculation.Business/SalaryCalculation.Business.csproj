@@ -49,6 +49,7 @@
     <Compile Include="CalculatorBase.cs" />
     <Compile Include="Holidays.cs" />
     <Compile Include="IPaymentDateCalculator.cs" />
+    <Compile Include="NoSuchDateException.cs" />
     <Compile Include="PaymentCalculators.cs" />
     <Compile Include="PaymentDateCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
