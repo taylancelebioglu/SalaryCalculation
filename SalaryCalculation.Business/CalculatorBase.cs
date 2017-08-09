@@ -43,7 +43,7 @@ namespace SalaryCalculation.Business
                     _days = new List<int>();
 
                     CultureInfo culture = Thread.CurrentThread.CurrentUICulture;
-                    int firstDay = (int)DayOfWeek.Monday;
+                    int firstDay = (int)DayOfWeek.Monday; //First working day of the week and working days count (if it will be specified except 5) should be entered during setup proccess of the application.
 
                     for (int i = firstDay; i < 6; i++)
                     {
