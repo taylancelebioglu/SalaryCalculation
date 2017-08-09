@@ -43,11 +43,10 @@ namespace SalaryCalculation.Business
                     _days = new List<int>();
 
                     CultureInfo culture = Thread.CurrentThread.CurrentUICulture;
-                    int firstDay = (int)culture.DateTimeFormat.FirstDayOfWeek;
+                    int firstDay = (int)DayOfWeek.Monday;
 
-                    for (int i = firstDay; _days.Count < 5; i++)
+                    for (int i = firstDay; i < 6; i++)
                     {
-                        if (i == 6) i = 0;
                         _days.Add(i);
                     }
                 }
